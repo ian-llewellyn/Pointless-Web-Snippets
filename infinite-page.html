@@ -1,0 +1,23 @@
+<!DOCTYPE html5>
+<html>
+  <head>
+    <title>Infinite Page</title>
+	<script type="text/javascript">
+window.onscroll = function () {
+  screenHeight = window.screen.availHeight;
+  yPos = window.scrollY;
+  bodyHeight = (screenHeight * 2) + yPos;
+
+  body = document.getElementsByTagName('body')[0];
+  body.style.height = bodyHeight;
+}
+	</script>
+	<style>
+body {
+  margin: 0;
+  height: 101%;
+}
+	</style>
+  </head>
+  <body></body>
+</html>
