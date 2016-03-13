@@ -1,0 +1,40 @@
+<!DOCTYPE html5>
+<html>
+  <head>
+    <title>Funky Links</title>
+  </head>
+  <style>
+a.dim {
+  color: #aaa;
+}
+a:hover {
+  color: #00f;
+}
+  </style>
+  <body>
+    <h1>Test Page</h1>
+    <p>This is a <a href="">test page</a> with just a couple of <a href="#">links</a>.</p>
+    <p>Copyright &copy; 2016 <a href="\\webapps.ie">WebApps<a/></p>
+	<script type="text/javascript">
+anchors = document.getElementsByTagName('a');
+
+function dimAll () {
+  for (i = 0; i < anchors.length; i++) {
+    anchors.item(i).classList.add('dim');
+  }
+}
+
+function dimNone () {
+  for (i = 0; i < anchors.length; i++) {
+    anchors.item(i).classList.remove('dim');
+  }
+}
+
+for (i = 0; i < anchors.length; i++) {
+  //console.log(anchors.item(i));
+  anchors.item(i).onmouseover = dimAll;
+  anchors.item(i).onmouseout = dimNone;
+};
+	</script>
+  </body>
+</html>
