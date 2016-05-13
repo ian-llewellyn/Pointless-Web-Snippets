@@ -12,11 +12,12 @@ var body = document.getElementsByTagName('body')[0];
 var ssDiv = document.createElement('div');
 ssDiv.style.position = 'absolute';
 ssDiv.style.top = 0;
-ssDiv.style.height = body.scrollHeight;
-ssDiv.style.width = body.scrollWidth;
+ssDiv.style.left = 0;
 ssDiv.style.backgroundColor = '#000';
   
 function ssActivate() {
+  ssDiv.style.height = body.scrollHeight;
+  ssDiv.style.width = body.scrollWidth;
   body.insertBefore(ssDiv, body.childNodes[0]);
   body.style.cursor = 'none';
   body.style.overflow = 'hidden';
