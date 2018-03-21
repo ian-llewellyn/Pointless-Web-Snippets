@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>CSS Background Blur Test</title>
+    <style type="text/css">
+body {
+  background-color: #000;
+  background-image: url('http://t-eska.cdn.smcloud.net/regionalna/t/2/t/image/cd3ff245036096813efa963855603bf4jNHw5Cqp-faje.jpg/ru-0-r-660,660-q-80-n-cd3ff245036096813efa963855603bf4jNHw5Cqpfaje.jpg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  font-family: Arial;
+  font-size: 2em;
+  color: #dff;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0);
+}
+</style>
+  </head>
+  <body>
+    <div>
+      <span>Test Text !!! Need a Longer Line !!!</span>
+    </div>
+  </body>
+</html>

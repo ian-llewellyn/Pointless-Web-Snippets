@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Sticky Box Contents Test</title>
+    <style type="text/css">
+body {
+  background-color: #222;
+}
+div {
+  height: 200%;
+  width: 30%;
+  min-width: 150px;
+  background-color: #f44;
+  padding: 1em;
+  margin: 1em;
+  overflow-y: hidden;
+}
+span {
+  color: #eee;
+  font-size: 14pt;
+  font-family: Arial;
+}
+    </style>
+    <script type="text/javascript">
+function recalculate() {
+  // Current scroll position
+  var scrollY = window.scrollY;
+
+  // What box is the top of the viewport masking (if any)
+  var divs = document.getElementsByTagName('div');
+  for (var i=0; i<divs.length; i++) {
+    var div = divs[i];
+    if (div.offsetTop < scrollY) var candidate_div = div;
+  }
+  if (candidate_div === undefined) {
+    var shim = document.getElementById('shim');
+    if (shim !== null) shim.remove()
+    return false;
+  }
+
+  // By how much is it cropping the top of the box?
+  var shim_height = scrollY - candidate_div.offsetTop;
+  // Insert / adjust height of shim to compensate
+  var shim = document.getElementById('shim') || document.createElement('span');
+  shim.id = 'shim';
+  shim.style.height = shim_height;
+  shim.style.display = 'block';
+  candidate_div.insertBefore(shim, candidate_div.firstChild);
+}
+
+window.addEventListener('scroll', recalculate);
+    </script>
+  </head>
+  <body>
+    <div>
+      <span>Box Contents</span>
+    </div>
+    <div>
+      <span>Box Contents</span>
+    </div>
+  </body>
+</html>
